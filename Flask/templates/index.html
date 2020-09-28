@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    
+
 {% endblock %}
 
 {% block body %}
@@ -14,19 +14,21 @@
             <th>Added</th>
             <th>Actions</th>
         </tr>
+        {% for task in tasks %}
         <tr>
-            <td></td>
-            <td></td>
+            <td>{{ task.content }}</td>
+            <td>{{ task.date_created.date() }}</td>
             <td>
-                <a href="">Delete</a>
-                <a href="">Update</a>
+                <a href="/delete/{{ task.id }}">Delete</a>
+                <a href="/update/{{ task.id }}">Update</a>
             </td>
         </tr>
+        {% endfor %}
     </table>
 
     <form action="/" method="POST">
         <input type="text" name="content" id="content">
-        <input type="submit" name="Add ">
+        <input type="submit" name="Add Task">
     </form>
 </div>
 {% endblock %}
