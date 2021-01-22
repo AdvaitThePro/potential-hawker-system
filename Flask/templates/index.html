@@ -8,7 +8,10 @@
 <div class="content">
     <h1>Items to order</h1>
     <h2>Sorry for no mobile view</h2>
-    
+    <p1>Things to take note:
+		 • Type in your registration  nunber before what you order (your registration number that you were given over email/phone)
+		 • If you haven't registered, click the button below to register<\p1>
+	<button>Register</button>
     <table>
         <tr>
             <th>Item</th>
@@ -21,7 +24,7 @@
             <td>{{ task.date_created.date() }}</td>
             <td>
                 <a href="/delete/{{ task.id }}">Delete</a>
-                <a href="/update/{{ task.id }}">Update</a>
+                <a href="/update/{{ task.id }}">Chabge item to order</a>
             </td>
         </tr>
         {% endfor %}
